@@ -19,13 +19,45 @@
           >
         </div>
         <div>
-          <button class="custom-button">Join our amazing community️</button>
+          <nuxt-link to="/" class="custom-button"
+            >Join our amazing community️</nuxt-link
+          >
+          <br />
+          <span class="check-page-link"
+            >Find out how you can get paid
+            <nuxt-link to="/">
+              <span style="text-decoration: underline; color: white;">
+                here
+              </span>
+            </nuxt-link>
+          </span>
         </div>
       </div>
     </div>
 
     <div class="body-content">
-      z
+      <div class="container how-it-works">
+        <div class="columns is-multiline">
+          <div class="column">
+            <div>
+              <span class="htw-title">You see</span>
+            </div>
+            <div><img src="../assets/you_see.svg" /></div>
+          </div>
+          <div class="column">
+            <div>
+              <span class="htw-title">You love</span>
+            </div>
+            <div><img src="../assets/you_love.svg" /></div>
+          </div>
+          <div class="column">
+            <div>
+              <span class="htw-title">We pay!</span>
+            </div>
+            <div><img src="../assets/we_pay.svg" /></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -35,6 +67,8 @@
 
 * {
   margin: 0 auto;
+  user-select: none;
+  outline: none;
 }
 
 .header {
@@ -77,6 +111,7 @@
 }
 
 .custom-button {
+  position: absolute;
   margin: 0 auto;
   user-select: none;
   outline: none;
@@ -86,7 +121,7 @@
   font-family: 'Thasadith', sans-serif;
   font-size: 20px;
   border-radius: 10px;
-  margin-top: 10vh;
+  margin-top: 16vh;
   padding: 10px 20px 10px 20px;
 }
 
@@ -97,12 +132,67 @@
 .body-content {
   position: relative;
   width: 100%;
-  background-color: blueviolet;
 }
 
-@media only screen and (max-width: 1380px) {
+.check-page-link {
+  color: #ffffff;
+  position: absolute;
+  font-family: 'Thasadith', sans-serif;
+  margin-top: 19vh;
+  margin-left: 7px;
+  font-size: 14px;
+}
+
+.how-it-works {
+  margin-top: 8%;
+  margin-bottom: 25%;
+}
+
+.column {
+  width: 100%;
+}
+
+.htw-title {
+  display: block;
+  text-align: center;
+  margin-bottom: 15%;
+  font-family: 'Thasadith', sans-serif;
+  font-weight: 700;
+  font-size: 45px;
+}
+
+@media only screen and (max-width: 1300px) {
+  .custom-button {
+    margin-top: 3vh;
+  }
+
+  .check-page-link {
+    margin-top: 7vh;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
   .sitting-girl {
     opacity: 0;
+  }
+
+  .head {
+    width: 100%;
+    height: 70vh;
+    background: #3caea3;
+  }
+
+  .content {
+    top: 5%;
+    left: 20px;
+  }
+
+  .custom-button {
+    margin-top: 7vh;
+  }
+
+  .check-page-link {
+    margin-top: 11vh;
   }
 }
 </style>

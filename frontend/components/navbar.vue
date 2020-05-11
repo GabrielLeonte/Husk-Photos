@@ -23,11 +23,15 @@
     <div class="navbar-menu">
       <div class="navbar-end">
         <div class="navbar-item">
-          <div class="button-container">
+          <div>
             <nuxt-link to="/" class="login-link">
               Login
             </nuxt-link>
-            <nuxt-link class="custom-button" to="/">Join us</nuxt-link>
+          </div>
+          <div class="navbar-item">
+            <div>
+              <nuxt-link class="custom-button" to="/">Join us</nuxt-link>
+            </div>
           </div>
         </div>
       </div>
@@ -39,10 +43,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto');
 
-* {
-  margin: 0 auto;
-}
-
 .rock-salt-title {
   font-family: 'Rock Salt', cursive;
   font-size: 25px;
@@ -52,18 +52,12 @@
 }
 
 .navbar {
-  position: relative;
   box-shadow: 0px 5px 5px #00000026;
-}
-
-.button-container {
-  position: relative;
-  line-height: 40px;
+  padding-right: 10px;
 }
 
 .custom-button {
   font-family: 'Roboto', sans-serif;
-  position: relative;
   user-select: none;
   outline: none;
   border: 0;
