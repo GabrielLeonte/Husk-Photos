@@ -24,13 +24,13 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div>
-            <nuxt-link to="/" class="login-link">
+            <nuxt-link to="/login" class="login-link">
               Login
             </nuxt-link>
           </div>
           <div class="navbar-item">
             <div>
-              <nuxt-link class="custom-button" to="/">Join us</nuxt-link>
+              <nuxt-link class="custom-button" to="/signup">Join us</nuxt-link>
             </div>
           </div>
         </div>

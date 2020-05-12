@@ -19,7 +19,7 @@
           >
         </div>
         <div>
-          <nuxt-link to="/" class="custom-button"
+          <nuxt-link to="/signup" class="custom-button"
             >Join our amazing community️</nuxt-link
           >
           <br />

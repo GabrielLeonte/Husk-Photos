@@ -36,20 +36,29 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    // Doc: https://github.com/nuxt-community/modules/tree/master/packages/bulma
     '@nuxtjs/bulma',
-    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    [
+      '@nuxtjs/firebase',
+      {
+        config: {
+          apiKey: 'AIzaSyBGPbcjK6YkzO_cYdiOUSDpfGF2j-a0TGw',
+          authDomain: 'husk-photos.firebaseapp.com',
+          databaseURL: 'https://husk-photos.firebaseio.com',
+          projectId: 'husk-photos',
+          storageBucket: 'husk-photos.appspot.com',
+          messagingSenderId: '478326428604',
+          appId: '1:478326428604:web:c2485a6b6edadd44f311b9',
+          measurementId: 'G-1FMYJYS64P'
+        },
+        services: {
+          auth: true // Just as example. Can be any other service.
+        }
+      }
+    ]
   ],
-  /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
-   */
   axios: {},
-  /*
-   ** Build configuration
-   */
   build: {
     postcss: {
       preset: {
@@ -58,9 +67,6 @@ export default {
         }
       }
     },
-    /*
-     ** You can extend webpack config here
-     */
     extend(config, ctx) {}
   }
 }
