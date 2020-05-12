@@ -25,11 +25,11 @@
           <br />
           <span class="check-page-link"
             >Find out how you can get paid
-            <nuxt-link to="/">
+            <a href="#how-it-works">
               <span style="text-decoration: underline; color: white;">
                 here
               </span>
-            </nuxt-link>
+            </a>
           </span>
         </div>
       </div>
@@ -42,21 +42,40 @@
             <div>
               <span class="htw-title">You see</span>
             </div>
-            <div><img src="../assets/you_see.svg" /></div>
+            <div><img class="htw-svg" src="../assets/you_see.svg" /></div>
           </div>
           <div class="column">
             <div>
               <span class="htw-title">You love</span>
             </div>
-            <div><img src="../assets/you_love.svg" /></div>
+            <div><img class="htw-svg" src="../assets/you_love.svg" /></div>
           </div>
           <div class="column">
             <div>
               <span class="htw-title">We pay!</span>
             </div>
-            <div><img src="../assets/we_pay.svg" /></div>
+            <div><img class="htw-svg" src="../assets/we_pay.svg" /></div>
           </div>
         </div>
+      </div>
+      <div class="container text-how-it-works">
+        <section id="how-it-works">
+          <span class="title">How it works?</span>
+          <div class="thiw-list">
+            <ol>
+              <li>You get a custom feed with the best shots in the world 📷</li>
+              <li>You ❤️ samples from your personal feed</li>
+              <li>The photographer gets paid through Coil Extension 💵</li>
+              <li>We all end with a huge smile 😊</li>
+            </ol>
+          </div>
+          <div class="thiw-svg">
+            <img src="../assets/happy.svg" />
+          </div>
+        </section>
+      </div>
+      <div class="container" style="user-select: none;">
+        <img src="../assets/test.png" />
       </div>
     </div>
   </div>
@@ -145,7 +164,7 @@
 
 .how-it-works {
   margin-top: 8%;
-  margin-bottom: 25%;
+  margin-bottom: 15%;
 }
 
 .column {
@@ -155,10 +174,39 @@
 .htw-title {
   display: block;
   text-align: center;
-  margin-bottom: 15%;
   font-family: 'Thasadith', sans-serif;
   font-weight: 700;
   font-size: 45px;
+}
+
+.htw-svg {
+  width: 250px;
+  display: block;
+  text-align: center;
+}
+
+.text-how-it-works {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.text-how-it-works .title {
+  font-size: 40px;
+}
+
+.thiw-svg {
+  position: absolute;
+  right: 0;
+  width: 420px;
+  top: 0;
+}
+
+.thiw-list {
+  margin-left: 2%;
+  margin-top: 10%;
+  font-family: 'Thasadith', sans-serif;
+  font-size: 30px;
+  color: #313131;
 }
 
 @media only screen and (max-width: 1300px) {
@@ -168,6 +216,21 @@
 
   .check-page-link {
     margin-top: 7vh;
+  }
+
+  .thiw-svg {
+    opacity: 0;
+  }
+
+  .text-how-it-works .title {
+    display: block;
+    float: center;
+    text-align: center;
+  }
+
+  .thiw-list li {
+    list-style-type: none !important;
+    text-align: center;
   }
 }
 
@@ -193,6 +256,16 @@
 
   .check-page-link {
     margin-top: 11vh;
+  }
+
+  .content {
+    margin-left: 20%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .content {
+    margin-left: 0%;
   }
 }
 </style>
