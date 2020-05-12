@@ -10,10 +10,18 @@
     </div>
     <div class="b-50">
       <div class="cbox">
-        <span class="c-title"
-          >Hello user <br />
-          Let’s get you in</span
-        >
+        <div class="c-title">
+          <span>
+            Hello user <br />
+            Let’s get you in
+          </span>
+        </div>
+        <div class="c-inputs">
+          <div><span>Email</span></div>
+          <input type="email" />
+        </div>
+        <div><span>Password</span></div>
+        <div><input type="password" /></div>
       </div>
     </div>
   </div>
@@ -23,7 +31,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
 
 body {
-  overflow-y: none;
+  user-select: none;
+  outline: none;
 }
 .image {
   float: left;
@@ -71,6 +80,15 @@ img {
   font-size: 20px;
   line-height: 45px;
   text-align: center;
+}
+
+input {
+  display: block;
+  text-align: center;
+  border: 0;
+  border-bottom: solid black 1px;
+  margin: auto;
+  width: 70%;
 }
 
 @media only screen and (max-width: 1100px) {
