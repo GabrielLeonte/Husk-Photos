@@ -74,7 +74,7 @@
           </div>
         </section>
       </div>
-      <div class="container" style="user-select: none;">
+      <div class="container" style="user-select: none; margin-bottom: 10%;">
         <img src="../assets/test.png" />
       </div>
     </div>
