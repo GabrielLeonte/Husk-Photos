@@ -1,6 +1,9 @@
 <template>
   <div>
     <nuxt />
+    <client-only>>
+      <notifications group="foo" />
+    </client-only>
   </div>
 </template>
 

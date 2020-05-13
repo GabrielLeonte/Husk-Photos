@@ -27,7 +27,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [{ src: './plugins/notifications.js', ssr: false }],
   /*
    ** Nuxt.js dev-modules
    */
@@ -39,6 +39,7 @@ export default {
     '@nuxtjs/bulma',
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    'cookie-universal-nuxt',
     [
       '@nuxtjs/firebase',
       {
@@ -53,7 +54,9 @@ export default {
           measurementId: 'G-1FMYJYS64P'
         },
         services: {
-          auth: true // Just as example. Can be any other service.
+          auth: {
+            ssr: true
+          }
         }
       }
     ]

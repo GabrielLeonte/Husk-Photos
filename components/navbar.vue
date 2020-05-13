@@ -24,13 +24,15 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div>
-            <nuxt-link to="/login" class="login-link">
+            <router-link to="/login" class="login-link">
               Login
-            </nuxt-link>
+            </router-link>
           </div>
           <div class="navbar-item">
             <div>
-              <nuxt-link class="custom-button" to="/signup">Join us</nuxt-link>
+              <router-link class="custom-button" to="/signup">
+                Join us
+              </router-link>
             </div>
           </div>
         </div>
@@ -40,11 +42,11 @@
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto');
+@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto");
 
 .rock-salt-title {
-  font-family: 'Rock Salt', cursive;
+  font-family: "Rock Salt", cursive;
   font-size: 25px;
   line-height: 15px;
   color: #313131;
@@ -57,13 +59,13 @@
 }
 
 .custom-button {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   user-select: none;
   outline: none;
   border: 0;
   background: #292929;
   color: #ffffff;
-  font-family: 'Thasadith', sans-serif;
+  font-family: "Thasadith", sans-serif;
   font-size: 19px;
   border-radius: 5px;
   padding: 2px 15px 2px 15px;
