@@ -35,33 +35,21 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [
-    '@nuxtjs/bulma',
-    '@nuxtjs/axios',
-    '@nuxtjs/pwa',
-    'cookie-universal-nuxt',
-    [
-      '@nuxtjs/firebase',
-      {
-        config: {
-          apiKey: 'AIzaSyBGPbcjK6YkzO_cYdiOUSDpfGF2j-a0TGw',
-          authDomain: 'husk-photos.firebaseapp.com',
-          databaseURL: 'https://husk-photos.firebaseio.com',
-          projectId: 'husk-photos',
-          storageBucket: 'husk-photos.appspot.com',
-          messagingSenderId: '478326428604',
-          appId: '1:478326428604:web:c2485a6b6edadd44f311b9',
-          measurementId: 'G-1FMYJYS64P'
-        },
-        services: {
-          auth: {
-            ssr: true
-          }
+  modules: ['@nuxtjs/bulma', '@nuxtjs/axios', '@nuxtjs/pwa', '@nuxtjs/auth'],
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: 'login', method: 'post', propertyName: 'token' },
+          user: { url: 'me', method: 'post', propertyName: 'data' },
+          logout: false
         }
       }
-    ]
-  ],
-  axios: {},
+    }
+  },
+  axios: {
+    baseURL: 'http://127.0.0.1:3001'
+  },
   build: {
     postcss: {
       preset: {

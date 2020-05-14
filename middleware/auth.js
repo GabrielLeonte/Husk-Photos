@@ -1,8 +1,6 @@
-import firebase from 'firebase/app'
-
 export default function({ store, redirect }) {
-  firebase.auth().onAuthStateChanged(user => {
-    if (user) redirect('/home')
-    store.state.user = user
-  })
+  // If the user is not authenticated
+  if (!store.state.auth.loggedIn) {
+    return redirect('/login')
+  }
 }

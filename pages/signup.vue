@@ -20,6 +20,15 @@
         <div class="c-inputs">
           <form @submit.prevent="proceed">
             <div class="space">
+              <div><span class="c-span">Username</span></div>
+              <input
+                type="text"
+                placeholder="eg: thebigdev"
+                v-model="username"
+                required
+              />
+            </div>
+            <div class="space">
               <div><span class="c-span">Email</span></div>
               <input
                 type="email"
@@ -64,27 +73,24 @@
 </template>
 
 <script>
-import firebase from 'firebase'
-
 export default {
-  middleware: 'auth',
+  middleware: 'guest',
   layout: 'nonavbar',
   data() {
     return {
       email: '',
+      username: '',
       password: ''
     }
   },
   methods: {
     async proceed() {
       try {
-        await firebase
-          .auth()
-          .createUserWithEmailAndPassword(this.email, this.password)
+        this.$store.commit('login', data)
       } catch (err) {
         this.$notify({
           group: 'foo',
-          type: 'warn',
+          type: 'error',
           text: err
         })
       }
@@ -107,7 +113,7 @@ export default {
 img {
   position: fixed;
   height: 100vh;
-  width: 40%;
+  width: 43%;
   object-fit: cover;
 }
 
@@ -164,11 +170,7 @@ input {
 
 .c-span {
   display: grid;
-  margin-top: 7vh;
-}
-
-.space {
-  margin-bottom: 3vh;
+  margin-top: 4vh;
 }
 
 .custom-button {
@@ -180,7 +182,7 @@ input {
   font-family: 'Thasadith', sans-serif;
   font-size: 15px;
   border-radius: 5px;
-  margin-top: 10vh;
+  margin-top: 7vh;
   padding: 8px 20px 8px 20px;
 }
 

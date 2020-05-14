@@ -64,7 +64,7 @@
 
 <script>
 export default {
-  middleware: "auth",
+  middleware: "guest",
   layout: 'nonavbar',
   data() {
     return {
@@ -75,23 +75,27 @@ export default {
   methods: {
     async proceed() {
       try {
-        const data = await this.$fireAuth.signInWithEmailAndPassword(
-          this.email,
-          this.password
-        )
+        try {
+          await this.$auth.loginWith('local', {
+            data: {
+              email: this.email,
+              password: this.password
+            }
+          })
 
-        this.$store.commit('login', data)
-      } catch (err) {
-        this.$notify({
-          group: 'foo',
-          type: 'warn',
-          text: err
-        })
+          this.$router.push('/home')
+        } catch (err) {
+          this.$notify({
+            group: 'foo',
+            type: 'error',
+            text: err.response.data.message
+          })
+        }
+      } finally {
       }
     }
   },
-  mounted() {
-  }
+  mounted() {}
 }
 </script>
 

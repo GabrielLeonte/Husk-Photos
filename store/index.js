@@ -1,10 +1,14 @@
 export const state = () => ({
-  user_data: []
+  user: []
 })
 
 export const mutations = {
-  login(state, data) {},
-  ON_AUTH_STATE_CHANGED_MUTATION(state, { authUser, claims }) {
-    console.log('Yep...')
+  login(state, data) {
+    console.log(data)
+    state.user = data
+    this.$router.push('/home')
+  },
+  test(state, data) {
+    console.log(data)
   }
 }

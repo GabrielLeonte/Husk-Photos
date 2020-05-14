@@ -19,9 +19,9 @@
           >
         </div>
         <div>
-          <nuxt-link to="/signup" class="custom-button"
-            >Join our amazing community️</nuxt-link
-          >
+          <nuxt-link to="/signup" class="custom-button">
+            Join our amazing community️
+          </nuxt-link>
           <br />
           <span class="check-page-link"
             >Find out how you can get paid
@@ -34,7 +34,6 @@
         </div>
       </div>
     </div>
-
     <div class="body-content">
       <div class="container how-it-works">
         <div class="columns is-multiline">
