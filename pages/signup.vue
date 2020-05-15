@@ -86,7 +86,21 @@ export default {
   methods: {
     async proceed() {
       try {
-        this.$store.commit('login', data)
+        const data = await this.$axios.post('/signup', {
+          email: this.email,
+          username: this.username,
+          password: this.password
+        })
+
+        if (data.status === 200) {
+          await this.$auth.loginWith('local', {
+            data: {
+              email: this.email,
+              password: this.password
+            }
+          })
+          this.$router.push('/home')
+        }
       } catch (err) {
         this.$notify({
           group: 'foo',

@@ -45,7 +45,7 @@
             </a>
           </div>
           <div class="navbar-item">
-            <a>
+            <a @click="$store.commit('logout')">
               <img class="navbar-icon" src="../assets/logout.svg" />
             </a>
           </div>
@@ -69,8 +69,11 @@
 }
 
 .navbar {
-  height: 30px;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 20px !important;
+  box-shadow: 0px 1px 1px #0000001a;
   padding-right: 10px;
 }
 

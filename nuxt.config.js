@@ -27,7 +27,10 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: './plugins/notifications.js', ssr: false }],
+  plugins: [
+    { src: './plugins/notifications.js', ssr: false },
+    { src: './plugins/infinite-scroll.js', ssr: false }
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -48,7 +51,7 @@ export default {
     }
   },
   axios: {
-    baseURL: 'http://127.0.0.1:3001'
+    baseURL: 'http://192.168.0.103:3001'
   },
   build: {
     postcss: {
