@@ -25,24 +25,24 @@
         <div class="navbar-end">
           <!-- ICONS -->
           <div class="navbar-item">
-            <a>
+            <nuxt-link to="/home">
               <img class="navbar-icon" src="../assets/home_3.svg" />
-            </a>
+            </nuxt-link>
           </div>
           <div class="navbar-item">
-            <a>
+            <nuxt-link to="/explore">
               <img class="navbar-icon" src="../assets/explore.svg" />
-            </a>
+            </nuxt-link>
           </div>
           <div class="navbar-item">
-            <a>
+            <nuxt-link to="/downloads">
               <img class="navbar-icon" src="../assets/download.svg" />
-            </a>
+            </nuxt-link>
           </div>
           <div class="navbar-item">
-            <a>
+            <nuxt-link to="/profile">
               <img class="navbar-icon" src="../assets/user.svg" />
-            </a>
+            </nuxt-link>
           </div>
           <div class="navbar-item">
             <a @click="$store.commit('logout')">
@@ -118,5 +118,10 @@ img {
   margin-left: 5px;
   margin-right: 5px;
   height: 50px;
+}
+
+.nuxt-link-exact-active {
+  border-radius: 4px;
+  border-bottom: solid #2c2c2c 4px ;
 }
 </style>

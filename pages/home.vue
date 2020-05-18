@@ -1,7 +1,7 @@
 <template>
   <div class="container" style="margin-top: 10vh;">
     <div
-      class="columns is-multiline "
+      class="columns is-multiline is-mobile "
       v-infinite-scroll="loadMore"
       infinite-scroll-disabled="busy"
       infinite-scroll-distance="120"
@@ -9,7 +9,7 @@
       <div class="column is-full" v-for="(item, index) in photos" :key="index">
         <div class="post">
           <div class="left">
-            <img :src="item.urls.small" />
+            <img class="image" width="500" :src="item.urls.regular" />
           </div>
           <div class="right">
             <!-- post title -->
@@ -32,7 +32,7 @@
 
             <!-- post camera -->
             <div class="data-rows">
-              <div class="columns is-multiline">
+              <div class="columns is-mobile is-multiline">
                 <div class="column object">
                   <span class="obj-title">Camera Make</span>
                   <span class="obj-subtitle">{{ item.exif.make }}</span>
@@ -50,7 +50,7 @@
               </div>
 
               <!-- second raw -->
-              <div class="columns is-multiline">
+              <div class="columns is-mobile is-multiline">
                 <div class="column object">
                   <span class="obj-title">Aperture</span>
                   <span class="obj-subtitle">f/{{ item.exif.aperture }}</span>
@@ -71,7 +71,7 @@
               <div class="line"></div>
 
               <!-- last raw -->
-              <div class="columns is-multiline views">
+              <div class="columns is-multiline is-mobile views">
                 <div class="column object">
                   <span class="views-title">Views</span>
                   <span class="views-subtitle">{{ item.views }}</span>
@@ -117,10 +117,15 @@ export default {
   },
   methods: {
     capitalize(text) {
-      return text
-        .split(' ')
-        .map(s => s.charAt(0).toUpperCase() + s.substring(1))
-        .join(' ')
+      try {
+        if (text)
+          return text
+            .split(' ')
+            .map(s => s.charAt(0).toUpperCase() + s.substring(1))
+            .join(' ')
+      } catch (err) {
+        if (err) alert(err)
+      }
     },
     async loadMore() {
       try {
@@ -138,13 +143,10 @@ export default {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 .column {
   width: 100%;
   margin-bottom: 6vh;
-}
-.left {
-  float: left;
-  display: grid;
 }
 
 .right {
@@ -183,6 +185,7 @@ export default {
 .obj-title {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
+  display: grid;
   color: #595959;
 }
 
@@ -190,6 +193,7 @@ export default {
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
   font-size: 14px;
+  display: grid;
   color: #000000;
 }
 .line {
@@ -212,5 +216,49 @@ export default {
   color: #595959;
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
+}
+
+@media screen and (min-width: 900px) {
+  .left {
+    float: left;
+    display: grid;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .right {
+    float: right;
+    right: 0;
+    position: absolute;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  * {
+    margin: auto 0;
+  }
+
+  .right {
+    position: relative;
+    float: left;
+    width: 100%;
+  }
+
+  .left:required {
+    float: center !important;
+    display: grid !important;
+  }
+  .column {
+    display: block;
+  }
+
+  .post-title,
+  .post-subtitle {
+    margin: auto;
+  }
+
+  img {
+    margin: 0 auto;
+  }
 }
 </style>
