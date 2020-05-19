@@ -2,7 +2,7 @@
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="container">
       <div class="navbar-brand">
-        <a class="navbar-item" href="/">
+        <a class="navbar-item" href="/home">
           <span class="navbar-item rock-salt-title">
             Husk Photos
           </span>
@@ -122,6 +122,6 @@ img {
 
 .nuxt-link-exact-active {
   border-radius: 4px;
-  border-bottom: solid #2c2c2c 4px ;
+  border-bottom: solid #2c2c2c 4px;
 }
 </style>
